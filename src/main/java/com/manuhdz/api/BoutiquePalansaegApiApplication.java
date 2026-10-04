@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BoutiquePalansaegApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BoutiquePalansaegApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BoutiquePalansaegApiApplication.class, args);
+    }
 
 }
