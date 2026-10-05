@@ -6,11 +6,9 @@ services:
       dockerfile: Dockerfile
     container_name: boutique_palansaeg_api
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USERNAME}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
+      - SPRING_DATASOURCE_URL=${POSTGRES_URL}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
     ports:
       - "8080:8080"
     depends_on:
@@ -19,7 +17,7 @@ services:
   #Base de datos
   postgres:
     image: postgres:15-alpine
-    container_name: boutique_palansaeg_postgesql
+    container_name: boutique_palansaeg_postgresql
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USERNAME}
